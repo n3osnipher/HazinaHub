@@ -66,8 +66,8 @@
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/hazinahub.git
-   cd hazinahub
+   git clone https://github.com/n3osnipher/HazinaHub.git
+   cd HazinaHub
    ```
 
 2. **Install dependencies:**
