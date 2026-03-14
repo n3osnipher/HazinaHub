@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #0d0d1a;
+    color: #e8e8f0;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4,h5,h6 { font-family: 'Syne', system-ui, sans-serif; letter-spacing: -0.02em; }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2a2a45; border-radius: 2px; }
+  ::selection { background: rgba(108,99,255,0.3); }
+}
+
+@layer components {
+  .glass {
+    background: rgba(19,19,31,0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .card {
+    @apply bg-r-card rounded-2xl border border-r-border/50;
+  }
+  .btn-primary {
+    @apply bg-r-accent hover:bg-r-accent/90 text-white font-medium
+           rounded-xl px-5 py-2.5 transition-all duration-200
+           active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-r-surface hover:bg-r-card text-r-text font-medium
+           rounded-xl px-5 py-2.5 border border-r-border transition-all duration-200
+           active:scale-95;
+  }
+  .btn-ghost {
+    @apply hover:bg-r-surface/60 text-r-muted hover:text-r-text
+           rounded-xl px-4 py-2 transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20
+           rounded-xl px-5 py-2.5 transition-all duration-200 active:scale-95;
+  }
+  .input-field {
+    @apply bg-r-surface border border-r-border rounded-xl px-4 py-3
+           text-r-text placeholder-r-muted focus:outline-none
+           focus:border-r-accent/60 focus:ring-2 focus:ring-r-accent/20
+           transition-all duration-200 w-full;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm
+           text-r-muted hover:text-r-text hover:bg-r-surface/80
+           transition-all duration-200 cursor-pointer font-medium w-full;
+  }
+  .nav-item.active {
+    @apply text-r-text bg-r-accent/10 border border-r-accent/20;
+  }
+  .section-header {
+    @apply font-display font-semibold text-white text-base mb-3;
+  }
+  .badge {
+    @apply text-xs font-semibold px-2 py-0.5 rounded-full;
+  }
+  .badge-sms      { @apply bg-blue-500/15 text-blue-400; }
+  .badge-call     { @apply bg-green-500/15 text-green-400; }
+  .badge-hiah     { @apply bg-r-accent/15 text-r-accent; }
+  .badge-system   { @apply bg-r-muted/15 text-r-muted; }
+  .toggle {
+    @apply relative w-11 h-6 rounded-full transition-colors duration-200 flex-shrink-0;
+  }
+  .toggle-thumb {
+    @apply absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-200;
+  }
+}
+
+/* Hiah wave bars */
+.wave-bar {
+  width: 3px;
+  border-radius: 2px;
+  background: white;
+  animation: wave 1.4s ease-in-out infinite;
+}
+
+/* Landing page gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6c63ff, #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  background: linear-gradient(#1a1a2e, #1a1a2e) padding-box,
+              linear-gradient(135deg, #6c63ff, #00d4aa) border-box;
+  border: 1px solid transparent;
+}
